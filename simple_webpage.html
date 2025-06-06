@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geert Oosterbroek · Data Scientist</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --accent: #4f46e5;
+        --accent-light: #60a5fa;
+        --bg: #f9fafb;
+        --text: #111827;
+        --text-light: #4b5563;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      /* ---------- Layout ---------- */
+      header {
+        background: radial-gradient(circle at top left, var(--accent), var(--accent-light));
+        color: #fff;
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+      }
+      header img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      }
+      header h1 {
+        font-size: clamp(2.25rem, 4vw + 1rem, 3.5rem);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+      header p {
+        font-size: 1.25rem;
+        max-width: 560px;
+        margin-inline: auto;
+        opacity: 0.9;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid #e5e7eb;
+        z-index: 10;
+      }
+      nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        list-style: none;
+        padding: 0.75rem 1rem;
+      }
+      nav a {
+        text-decoration: none;
+        font-weight: 600;
+        color: var(--text);
+        transition: color 0.15s ease;
+      }
+      nav a:hover {
+        color: var(--accent);
+      }
+      section {
+        padding: 4rem 1.25rem;
+        max-width: 960px;
+        margin-inline: auto;
+      }
+      section h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: var(--accent);
+        text-align: center;
+      }
+      /* ---------- Components ---------- */
+      .timeline {
+        display: grid;
+        gap: 1.25rem;
+      }
+      .card {
+        background: #fff;
+        padding: 1.5rem 1.25rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      }
+      .card h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+      .card span {
+        font-size: 0.925rem;
+        color: var(--text-light);
+      }
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+      }
+      .skill {
+        background: var(--accent-light);
+        color: #fff;
+        padding: 0.4rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        font-weight: 600;
+      }
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      .contact-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--accent);
+        color: #fff;
+        padding: 0.6rem 1rem;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.15s ease, transform 0.15s ease;
+      }
+      .contact-links a:hover {
+        background: #4338ca;
+        transform: translateY(-2px);
+      }
+      footer {
+        text-align: center;
+        font-size: 0.875rem;
+        padding: 2rem 1rem;
+        color: var(--text-light);
+      }
+      /* -------- Responsive Tweaks -------- */
+      @media (min-width: 640px) {
+        .timeline {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        header {
+          min-height: 75vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== Header / Hero ===== -->
+    <header id="home">
+      <!-- ⚠️ Replace profile.jpg with your own image file -->
+      <img src="profile.jpg" alt="Geert Oosterbroek" />
+      <h1>Geert Oosterbroek</h1>
+      <p>Data Scientist &amp; Machine Learning Engineer, turning data into delightful experiences at <strong>Breeze</strong>.</p>
+      <div class="contact-links" style="margin-top: 2rem;">
+        <a href="https://www.linkedin.com/in/geert-oosterbroek/" target="_blank" rel="noopener">LinkedIn</a>
+        <!-- Uncomment and edit when you have content -->
+        <!-- <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a> -->
+        <!-- <a href="mailto:your@email.com">Email</a> -->
+      </div>
+    </header>
+
+    <!-- ===== Navigation ===== -->
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- ===== About Section ===== -->
+    <section id="about">
+      <h2>About</h2>
+      <p style="max-width:700px;margin-inline:auto;text-align:center;">Dynamic and results‑oriented Data Scientist with a passion for leveraging data to drive product innovation and user engagement. I enjoy building end‑to‑end machine‑learning pipelines— from exploratory analysis to model deployment— and translating complex insights into actionable strategy. Currently helping <em>Breeze</em> take online dating offline by matching people who really click. </p>
+    </section>
+
+    <!-- ===== Experience Section ===== -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <article class="card">
+          <h3>Data Scientist · Breeze</h3>
+          <span>2024 – Present</span>
+          <p>Building recommendation engines and experimentation frameworks to create meaningful offline connections for 200k+ users.</p>
+        </article>
+        <article class="card">
+          <h3>Data Scientist · Rewire (MIcompany)</h3>
+          <span>2021 – 2024</span>
+          <p>Worked with cross‑functional teams to deploy machine‑learning solutions at scale across energy, retail, and finance clients.</p>
+        </article>
+        <article class="card">
+          <h3>Founder · Oosterbroek &amp; Koole Consultancy</h3>
+          <span>2019 – 2021</span>
+          <p>Co‑founded a boutique consultancy delivering logistics optimisation tools using operations research and predictive analytics.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Education Section ===== -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="timeline">
+        <article class="card">
+          <h3>MSc Econometrics (Cum Laude)</h3>
+          <span>Erasmus School of Economics · 2020 – 2022</span>
+          <p>Thesis: <em>Statistical post‑processing of wind‑speed forecasts using convolutional neural networks</em> (grade 9.0).</p>
+        </article>
+        <article class="card">
+          <h3>BSc Econometrics &amp; Operations Research</h3>
+          <span>Erasmus School of Economics · 2016 – 2020</span>
+          <p>Honours Class graduate; Minor Applied Data Science.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Skills Section ===== -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="skill">Python</span>
+        <span class="skill">SQL</span>
+        <span class="skill">AWS</span>
+        <span class="skill">Pandas</span>
+        <span class="skill">TensorFlow</span>
+        <span class="skill">Scikit‑learn</span>
+        <span class="skill">MLOps</span>
+        <span class="skill">Experiment Design</span>
+        <span class="skill">Data Viz</span>
+      </div>
+    </section>
+
+    <!-- ===== Contact Section ===== -->
+    <section id="contact">
+      <h2>Get in touch</h2>
+      <p style="max-width:620px;margin-inline:auto;text-align:center;">Like what you see? Let’s connect and explore how data can make a real impact. Reach out via LinkedIn or drop me an email— I’m always up for a (real‑world) coffee chat.</p>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/geert-oosterbroek/" target="_blank" rel="noopener">LinkedIn</a>
+        <!-- <a href="mailto:contact@geertoosterbroek.com">Email Me</a> -->
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Geert Oosterbroek · Made with ❤️ and vanilla HTML &amp; CSS
+    </footer>
+
+    <script>
+      // Auto‑update footer year
+      document.getElementById('year').textContent = new Date().getFullYear();
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
